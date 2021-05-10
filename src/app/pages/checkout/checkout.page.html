@@ -1,0 +1,116 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          Checkout
+        </span> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-card class="top_Card" *ngFor="let item of data">
+    <ion-row>
+      <ion-col size="4">
+        <img [src]="item.img1" alt="">
+      </ion-col>
+      <ion-col size="6" class="ion-text-start">
+        <ion-row class="title-row">
+          <ion-col class="ion-text-start">
+            <span class="card-title">{{item?.name}}</span>
+
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-start salary">
+            <span>EGP {{item?.price}}</span>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card> -->
+
+  <!-- <ion-card class="top_Card">
+    <ion-row>
+      <ion-col size="4">
+        <img src="assets/imgs/shop/shop_test.png" alt="">
+      </ion-col>
+      <ion-col size="6" class="ion-text-start">
+        <ion-row class="title-row">
+          <ion-col class="ion-text-start">
+            <span class="card-title">GREEN BALANCE</span>
+
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-start salary">
+            <span>EGP 30.00</span>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card> -->
+  <div class="item_container">
+    <ion-row class="item">
+      <ion-col size="3">
+        <span class="subtotal">Subtotal</span>
+
+      </ion-col>
+      <ion-col size="6" class="price-col">
+        <span>EGP {{subTotalPrice}}</span>
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="item">
+      <ion-col size="3">
+        <span class="subtotal">Delivery</span>
+
+      </ion-col>
+      <ion-col size="6" class="price-col">
+        <span>EGP 0</span>
+
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="item-discount">
+      <ion-col size="3">
+        <span class="subtotal">Discount</span>
+
+      </ion-col>
+      <ion-col size="6" class="price-col">
+        <span>EGP -30</span>
+
+      </ion-col>
+    </ion-row> -->
+    <hr>
+    <ion-row class="item-total">
+      <ion-col size="3">
+        <span class="subtotal">Total</span>
+
+      </ion-col>
+      <ion-col size="6" class="price-col">
+        <span>EGP {{totalPrice}}</span>
+
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <hr>
+  <h4>Delivery Address</h4>
+  <p>{{address}}</p>
+  <div class="checkout-container">
+    <ion-button class="checkout" expand="full" shape="round" (click)="goToOrder()">order</ion-button>
+
+  </div>
+</ion-content>

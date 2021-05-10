@@ -1,0 +1,118 @@
+ion-content {
+    --background: #F5F6F8;
+}
+
+.top-grid {
+    height: 25vh;
+    background: #FF6979;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.back-container {
+
+    img {
+        width: 30px;
+        margin-left: 1vw;
+    }
+
+}
+
+.title-row {
+    margin-top: 2vh;
+}
+
+.title {
+    span {
+        font-size: 1.8em;
+        color: white;
+        font-weight: bold;
+
+    }
+}
+
+.subtitle-row {
+    margin-top: 4vh;
+
+}
+
+.subtitle {
+    span {
+        font-size: 1.6em;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.3em;
+        color: white;
+        margin-top: 0px;
+
+    }
+
+    ion-row {
+        justify-content: center;
+
+    }
+}
+
+.items-container {
+    background: white;
+    margin-top: 5vh;
+
+    img {
+        width: 7%;
+    }
+
+    ion-item {
+        --inner-padding-end: 0;
+        --padding-start: 0 !important;
+        padding-inline-start: 0 !important;
+
+
+
+
+    }
+
+    ion-col {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-left: 5vw;
+            font-size: 1.2em;
+            color: #178DD5;
+        }
+    }
+
+    ion-row {
+        width: 100%;
+        height: 9vh;
+
+    }
+
+    .arrow {
+        width: 35%;
+    }
+}
+
+.save {
+    --background: linear-gradient(235deg, #08d3ff 0%, #178DD5 0%, #FF62A5 100%);
+    height: 55px;
+    width: 45%;
+    font-size: 1.3em;
+
+}
+
+.save-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 5vh;
+    background: #F5F6F8;
+
+
+}

@@ -1,0 +1,51 @@
+<ion-content class="ion-text-center ">
+  <div>
+    <img class="logo" src="assets/imgs/login/logo.png" alt="">
+  </div>
+  <form [formGroup]="Form" (submit)="onSubmitLogin()" novalidate>
+
+    <div class="ion-text-center inputs_container">
+
+      <ion-input placeholder="Email" formControlName="username"></ion-input>
+    </div>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.username">
+        <div class="error-message"
+          *ngIf="Form.get('username').hasError(validation.type) && (Form.get('username').dirty && Form.get('username').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <div class="ion-text-center inputs_container">
+      <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+
+    </div>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message"
+          *ngIf="Form.get('password').hasError(validation.type) && (Form.get('password').dirty && Form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <div class="button_container">
+      <ion-button class="singup" expand="full" shape="round" type="submit">SIGN IN</ion-button>
+
+    </div>
+
+  </form>
+  <p class="forget_password" (click)="goToResetPassword()">
+    Forgot your password?
+  </p>
+  <div class="social_buttons_container">
+    <ion-button class="face_button" expand="full" shape="round" (click)="facebookLogin()">Connect with Facebook
+    </ion-button>
+    <ion-button class="google_button" expand="full" shape="round" (click)="googleLogin()">Connect with Google
+    </ion-button>
+
+  </div>
+  <div class="footer">
+    <span class="forget_password">Don’t have an account? </span> <span (click)="goToSignup()">SignUp</span>
+
+  </div>
+</ion-content>

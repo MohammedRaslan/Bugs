@@ -1,0 +1,140 @@
+ .top-grid {
+     height: 25vh;
+     background: #FF6979;
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+ }
+
+ .back-container {
+
+     img {
+         width: 30px;
+         margin-left: 1vw;
+     }
+
+ }
+
+ .title-row {
+     margin-top: 2vh;
+ }
+
+ .title {
+     span {
+         font-size: 1.8em;
+         color: white;
+         font-weight: bold;
+         margin-left: -5vw;
+
+     }
+ }
+
+ .subtitle-row {
+     margin-top: 4vh;
+
+ }
+
+ .subtitle {
+     span {
+         font-size: 1.6em;
+         color: white;
+         text-transform: uppercase;
+     }
+
+     p {
+         font-size: 1.3em;
+         color: white;
+         margin-top: 0px;
+
+     }
+
+     ion-row {
+         justify-content: center;
+
+     }
+ }
+
+ .order-col {
+     flex-direction: column;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+
+
+ }
+
+ .order-col-second {
+     flex-direction: column;
+     display: flex;
+     align-items: flex-end;
+     justify-content: space-around;
+
+     span {
+         color: #515C6F;
+     }
+
+     div {
+         height: 10px;
+         width: 10px;
+         border-radius: 5px;
+         background: #FF6979;
+     }
+ }
+
+ .order-container {
+     width: 14vw;
+     height: 7vh;
+     border-radius: 27px;
+     background: #178DD5;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     margin-right: -4vw;
+
+
+     img {
+         width: 50%;
+     }
+ }
+
+ p {
+     span {
+         color: #FF6979;
+     }
+ }
+
+ ion-item {
+     --inner-padding-end: 2px !important;
+     margin-right: 2vw;
+
+ }
+
+ .shop-container {
+     width: 14vw;
+     height: 7vh;
+     border-radius: 27px;
+     background: #FF6979;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     margin-right: -4vw;
+
+
+     img {
+         width: 50%;
+     }
+
+
+ }
+
+ .no_notifications {
+     margin-top: 25vh;
+     margin-left: 10vw;
+
+     h2 {
+         color:#178DD5;
+
+     }
+ }

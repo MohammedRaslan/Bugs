@@ -1,0 +1,30 @@
+ion-content {
+    --background: var(--page-background)
+}
+
+div {
+    margin-top: 5vh;
+
+    .logo {
+        width: 30%;
+
+    }
+}
+
+.thanks-container {
+    margin-top: 18vh;
+
+    h1 {
+        font-size: 3em;
+        font-weight: bold;
+        color: #178DD5;
+    }
+}
+
+p {
+    color: #949FAB;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    margin-top: 5vh;
+    font-size: 1.3em;
+}

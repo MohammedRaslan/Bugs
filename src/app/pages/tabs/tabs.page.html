@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <img src="assets/imgs/tabs/Home.png" alt="">
+        <ion-label>HOME</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="learn">
+        <img src="assets/imgs/tabs/learn.png" alt="">
+        <ion-label>BLOGS</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="shop">
+        <img class="edit_imag" src="assets/imgs/tabs/shop.png" alt="">
+        <ion-label>SHOP</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cart">
+        <img class="edit_imag" src="assets/imgs/tabs/Cart.png" alt="">
+        <ion-label>CART</ion-label>
+        <ion-badge *ngIf="cartCount>0"></ion-badge>
+
+      </ion-tab-button>
+      <ion-tab-button tab="more" class="more" (click)="toggleMenu()">
+        <img src="assets/imgs/tabs/More.png" alt="">
+        <ion-label>MORE</ion-label>
+
+
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

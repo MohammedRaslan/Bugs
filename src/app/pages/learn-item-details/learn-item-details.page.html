@@ -1,0 +1,79 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col size="8" class="ion-text-start title">
+        <span>
+          Learn
+        </span> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="data-container">
+    <img [src]="item?.img" alt="">
+    <ion-row>
+      <h2>{{item?.name}}</h2>
+    </ion-row>
+    <p [innerHTML]="item?.text">
+    </p>
+    <p [innerHTML]="item?.text2">
+    </p>
+  </div>
+ 
+  <ion-row>
+    <ion-col size="4">
+      <ion-button class="like" expand="full" shape="round" (click)="like()">
+        {{Like}}
+      </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <!-- <ion-button class="comment" expand="full" fill="outline" shape="round">
+        Comment
+      </ion-button> -->
+    </ion-col>
+    <ion-col size="4">
+      <ion-button class="share" expand="full" shape="round" (click)="share()">
+        Share
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <div class="comment_text">
+    <ion-textarea rows="6" cols="20" placeholder="Enter any comments here..." [(ngModel)]="comment"></ion-textarea>
+
+  </div>
+  <ion-row class="ion-text-end">
+    <ion-col class="ion-text-end">
+      <ion-button class="post" size="larg" shape="round" (click)="doComment()">
+        post
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row class="ion-text-end">
+    <ion-col class="ion-text-end"> -->
+  <ion-row>
+    <h2>Comments</h2>
+  </ion-row>
+  <ion-card *ngFor="let comment of comments;let i = index">
+    <ion-row>
+      <ion-col size="2" class="ion-text-end">
+        <!-- <ion-icon name="trash-outline" class="delete_icon" (click)="deleteComment(comment,i)"></ion-icon> -->
+      </ion-col>
+      <ion-col size="5" class="ion-text-end">
+        <span class="comment">
+          {{comment?.comment}}
+        </span>
+      </ion-col>
+      <ion-col size="5" class="ion-text-end">
+        <span class="username">
+          : {{comment.user?.name}}
+
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <!-- </ion-col>
+  </ion-row> -->
+</ion-content>

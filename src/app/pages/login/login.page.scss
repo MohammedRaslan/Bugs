@@ -1,0 +1,67 @@
+ion-content {
+    --background: var(--page-background);
+}
+
+div {
+    margin-top: 5vh;
+
+    .logo {
+        width: 30%;
+    }
+}
+
+.singup {
+    --background: linear-gradient(235deg, #08d3ff 0%, #178dd5 0%, #ff62a5 100%);
+    margin-top: 5vh;
+    height: 7vh;
+}
+
+.inputs_container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 3vh;
+}
+
+ion-input {
+    background: white;
+    height: 7vh;
+    border-radius: 25px;
+    color: #9b9b9b;
+    --placeholder-color: #9b9b9b;
+    --placeholder-opacity: 1;
+}
+
+.button_container {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.social_buttons_container {
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.face_button {
+    --background: #2672cb;
+}
+
+.google_button {
+    --background: #fc3850;
+    margin-top: 2vh;
+}
+
+.forget_password {
+    color: #9b9b9b;
+}
+
+.footer {
+    margin-top: 4vh;
+}
+
+.validation-errors {
+    padding-left: 20px;
+}
+
+.error-message {
+    color: red;
+}

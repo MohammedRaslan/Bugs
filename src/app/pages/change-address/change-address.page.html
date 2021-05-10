@@ -1,0 +1,134 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-center title">
+        <span>
+          Shipping Address
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10">
+        <ion-row>
+          <ion-col>
+            <h5>Delivery Address 1 </h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>{{address}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+      <ion-col size="2">
+        <!-- <div class="edit" (click)="openAdressForEdit()">
+          <img src="assets/imgs/edit.png" alt="">
+        </div> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10">
+        <ion-row>
+          <ion-col>
+            <h5>Delivery Address 2 </h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>{{address2}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+      <ion-col size="2">
+        <div class="edit" (click)="openAdressForEdit()">
+          <img src="assets/imgs/edit.png" alt="">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="profile?.address1 == null  ||addressTwoChecker" class="grid_item">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Governorate</ion-label>
+          <ion-select (ionChange)="changeGovernorateSelect($event)">
+            <ion-select-option *ngFor="let item of governorateList" [value]="item"> {{item}}</ion-select-option>
+
+            <!-- <ion-select-option value="cairo">Cairo</ion-select-option>
+            <ion-select-option value="giza">Giza</ion-select-option>
+            <ion-select-option value="newCairo">New Cairo</ion-select-option> -->
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="profile?.address1 == null  ||addressTwoChecker" class="grid_item">
+    <ion-row>
+      <ion-col>
+        <ion-item *ngIf="governorate=='cairo'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+            <ion-select-option *ngFor="let item of cairoStates" [value]="item"> {{item}}</ion-select-option>
+
+
+
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="governorate=='giza'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+
+            <ion-select-option *ngFor="let item of gizaStates" [value]="item"> {{item}}</ion-select-option>
+
+
+
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="governorate=='newCairo'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+
+            <ion-select-option *ngFor="let item of newCairoStates" [value]="item"> {{item}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="addressChecker" class="grid_item">
+    <ion-row>
+      <ion-item>
+        <ion-row>
+          <!-- <span>Your detailed address :</span> -->
+          <p>Your detailed address : </p>
+
+          <ion-input [(ngModel)]="addressDetails"></ion-input>
+        </ion-row>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+  <div class="checkout-container" *ngIf="addressDetails!=null &&profile?.address1 ==null">
+    <ion-button class="checkout" expand="full" shape="round" (click)="saveAdress()">
+      save Address</ion-button>
+
+  </div>
+  <div class="checkout-container" *ngIf="addressTwoChecker">
+    <ion-button class="checkout" expand="full" shape="round" (click)="saveAdress2()">
+      save Address</ion-button>
+
+  </div>
+</ion-content>

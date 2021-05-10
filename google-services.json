@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "248245649162",
+    "firebase_url": "https://bugs-roses.firebaseio.com",
+    "project_id": "bugs-roses",
+    "storage_bucket": "bugs-roses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248245649162:android:ccc8883af8768dca22c4f3",
+        "android_client_info": {
+          "package_name": "com.shora.bugnroses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248245649162-4l2va1fjbui8vuivjou25l8lkhadkbmv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shora.bugnroses",
+            "certificate_hash": "5bba4081360e2dc71cf5a3e6df76bbcfb2e339f8"
+          }
+        },
+        {
+          "client_id": "248245649162-pi5v02v559d83m8hj55nmjp6rhgoi6oh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLRFkrZl00neHGSpEoa9Jv7Xzdwzr1acI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248245649162-pi5v02v559d83m8hj55nmjp6rhgoi6oh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "248245649162-o7rmuhtar3em5b1k8at74kqfm6o6ciju.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.shora.bugnroses"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

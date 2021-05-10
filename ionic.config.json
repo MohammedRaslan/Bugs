@@ -1,0 +1,8 @@
+{
+  "name": "BnR",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

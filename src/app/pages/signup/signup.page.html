@@ -1,0 +1,93 @@
+<ion-content class="ion-text-center ">
+  <div class="back-container">
+    <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+  </div>
+
+
+  <div class="logo_container">
+    <img class="logo" src="assets/imgs/login/logo.png" alt="">
+  </div>
+  <form [formGroup]="Form" (submit)="onSubmitSignup()" novalidate>
+
+    <div class="container">
+      <!-- <div class="ion-text-center inputs_container">
+
+        <ion-input placeholder="Name" formControlName="name"></ion-input>
+
+      </div>
+      <div class="ion-text-center inputs_container">
+
+        <ion-input placeholder="Mobile" formControlName="mobile"></ion-input>
+
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.mobile">
+          <div class="error-message"
+            *ngIf="Form.get('mobile').hasError(validation.type) && (Form.get('mobile').dirty && Form.get('mobile').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div> -->
+      <div class="ion-text-center inputs_container">
+
+        <ion-input placeholder="Email" formControlName="email"></ion-input>
+
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message"
+            *ngIf="Form.get('email').hasError(validation.type) && (Form.get('email').dirty && Form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <ng-container formGroupName="matching_passwords">
+
+        <div class="ion-text-center inputs_container">
+          <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+
+        </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <div class="error-message"
+              *ngIf="Form.get('matching_passwords').get('password').hasError(validation.type) && (Form.get('matching_passwords').get('password').dirty && Form.get('matching_passwords').get('password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="ion-text-center inputs_container">
+          <ion-input placeholder="Confirm password" type="password" formControlName="confirm_password"></ion-input>
+
+        </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.confirm_password">
+            <div class="error-message"
+              *ngIf="Form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (Form.get('matching_passwords').get('confirm_password').dirty && Form.get('matching_passwords').get('confirm_password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="validation-errors matching">
+          <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+            <div class="error-message"
+              *ngIf="Form.get('matching_passwords').hasError(validation.type) && Form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (Form.get('matching_passwords').get('confirm_password').dirty && Form.get('matching_passwords').get('confirm_password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+    <div class="button_container">
+      <ion-button class="singup" expand="full" shape="round" type="submit">SIGN Up</ion-button>
+
+    </div>
+  </form>
+
+  <div class="footer">
+    <span>By clicking singup, you agree to our
+    </span>
+    <span class="bold"> Terms and Conditions</span>
+
+  </div>
+</ion-content>

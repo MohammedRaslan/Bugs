@@ -1,0 +1,177 @@
+ion-content {
+    --background: #F5F6F8;
+
+}
+
+.back-container {
+
+    img {
+        width: 35px;
+        margin-left: 1vw;
+    }
+
+}
+
+.title-row {
+    margin-top: 2vh;
+}
+
+.title {
+    span {
+        font-size: 1.6em;
+        color: #178DD5;
+        font-weight: bold;
+        margin-left: 5vw;
+    }
+}
+
+ion-card {
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: calc(42vw - 40px) !important;
+    width: auto;
+ 
+    img {
+        height: 20vh;
+        margin-top: -2vh;
+        margin-left: -3vw;
+
+    }
+
+    .title-row {
+        margin-top: 2.5vh;
+    }
+}
+
+.container {
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+
+
+.card-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333333;
+}
+
+.salary {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+        color: #FF6979;
+        font-size: 1.2em;
+        margin-left: 1vw;
+    }
+}
+
+.item {
+    margin-left: 4vw;
+
+    .subtotal {
+        color: #333333;
+        font-size: 1em;
+
+    }
+
+    .price-col {
+        margin-left: 2vw;
+        margin-top: -.5vh;
+
+    }
+
+    span {
+        font-size: 1.3em;
+        color: #178DD5;
+
+    }
+}
+
+.item-discount {
+    margin-left: 4vw;
+
+    .subtotal {
+        color: #333333;
+        font-size: 1em;
+
+    }
+
+    .price-col {
+        margin-left: 2vw;
+        margin-top: -.5vh;
+
+    }
+
+    span {
+        font-size: 1.3em;
+        color: #FF6979;
+
+    }
+}
+
+.item_container {
+    margin-top: 4vh;
+
+}
+
+.item-total {
+    margin-left: 4vw;
+
+    .subtotal {
+        color: #178DD5;
+        font-size: 1.5em;
+
+    }
+
+    .price-col {
+        margin-left: 2vw;
+
+    }
+
+    span {
+        font-size: 1.5em;
+        color: #FF6979;
+
+    }
+}
+
+hr {
+    border-top: 1px solid #707070;
+    margin-left: 5vw;
+    margin-right: 5vw;
+
+}
+
+h4 {
+    color: #178DD5;
+    margin-left: 5vw;
+}
+
+p {
+    color: #77838F;
+    margin-top: 3vh;
+    margin-left: 5vw;
+}
+
+.checkout {
+    --background: linear-gradient(235deg, #08d3ff 0%, #178DD5 0%, #FF62A5 100%);
+    height: 50px;
+    width: 80%;
+}
+
+.checkout-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 4vh;
+
+
+}

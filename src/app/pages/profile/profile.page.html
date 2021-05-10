@@ -1,0 +1,196 @@
+<ion-content>
+
+  <ion-grid class="top-grid">
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/notification/Left_Arrow.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          My Profile
+        </span> </ion-col>
+    </ion-row>
+    <ion-row class="subtitle-row ion-text-center">
+
+      <ion-col class="ion-text-start subtitle">
+        <ion-row>
+          <span>
+            {{profile.name}}
+          </span>
+        </ion-row>
+        <ion-row>
+          <p>
+            {{profile.address1}}
+          </p>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)" value="info">
+    <ion-segment-button value="info" class="info">
+      <ion-label>info</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="orders">
+      <ion-label> Orders History</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="segment">
+    <div *ngSwitchCase="'info'" class="data-container">
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Full name</span>
+          </ion-col>
+          <ion-col size="8" (click)="openProfileNameForEdit()">
+            <span>{{profile.name}}</span>
+            <ion-input [(ngModel)]="profileName" *ngIf="profileNameChecker"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+      <!-- <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Birthday</span>
+          </ion-col>
+          <ion-col size="8" (click)="openProfileBirthDateForEdit()">
+            <span>{{profile.birthdate}}</span>
+            <ion-datetime displayFormat="DDDD MMM D, YYYY" [(ngModel)]="profileBirthDate"
+              *ngIf="profileBirthDateChecker">
+            </ion-datetime>
+
+          </ion-col>
+        </ion-row>
+      </ion-item> -->
+
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Email Address</span>
+          </ion-col>
+          <ion-col size="8">
+            <span>{{profile.email}}</span>
+            <ion-input [(ngModel)]="profileEmail" type="email" inputmode="email" disabled *ngIf="profileEmailChecker">
+            </ion-input>
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Phone Number</span>
+          </ion-col>
+          <ion-col size="8" (click)="openProfilePhoneForEdit()">
+            <span>{{profile.mobile}}</span>
+            <ion-input [(ngModel)]="profilePhone" min="11" type="number" inputmode="tel" *ngIf="profilePhoneChecker">
+            </ion-input>
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Password</span>
+          </ion-col>
+          <ion-col size="8" (click)="openProfilePasswordForEdit()">
+            <span *ngIf="!profilePasswordChecker">**********************</span>
+            <ion-input [(ngModel)]="profilePassword" type="password" *ngIf="profilePasswordChecker"></ion-input>
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Address 1</span>
+          </ion-col>
+          <ion-col size="8">
+            <span>{{profile.address1}}</span>
+            <!-- <ion-input [(ngModel)]="profileAddress1" *ngIf="profileAddress1Checker"></ion-input> -->
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col class="first" size="4">
+            <span>Address 2</span>
+          </ion-col>
+          <ion-col size="8" (click)="openProfileAddress2ForEdit()">
+            <span>{{profile.address2}}</span>
+            <ion-input [(ngModel)]="profileAddress2" *ngIf="profileAddress2Checker"></ion-input>
+
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+      <div class="save-container">
+        <ion-button class="save" expand="full" shape="round" (click)="Save()">SAVE</ion-button>
+
+      </div>
+    </div>
+
+    <div class="orders" *ngSwitchCase="'orders'">
+      <ion-item *ngFor="let item of orderHistory">
+        <ion-col size="4">
+          <div class="order-circle">
+
+          </div>
+        </ion-col>
+        <ion-col size="8">
+          <ion-row class="data-row">
+            <span class="order-number">#{{item?.id}}</span>
+          </ion-row>
+          <ion-row>
+            <p class="order-number">Order date : <span class="order-date">{{item?.created_at}}</span></p>
+            <!-- <p class="order-number">Delivery date : <span class="delivery-date">{{item?.delivery_date}}</span></p> -->
+
+          </ion-row>
+        </ion-col>
+      </ion-item>
+
+
+
+      <!-- <ion-item>
+        <ion-col size="4">
+          <div class="order-circle-second">
+
+          </div>
+        </ion-col>
+        <ion-col size="8">
+          <ion-row class="data-row">
+            <span class="order-number">#1134-2234</span>
+          </ion-row>
+          <ion-row>
+            <p class="order-number">Order date : <span class="order-date">August 27 , 2020</span></p>
+            <p class="order-number">Delivery date : <span class="delivery-date">Sept 1, 2020</span></p>
+
+          </ion-row>
+        </ion-col>
+      </ion-item> -->
+    </div>
+  </div>
+
+</ion-content>

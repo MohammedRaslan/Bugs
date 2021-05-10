@@ -1,0 +1,46 @@
+ h2,
+ h4,
+ h5 {
+     color: var(--ion-color-primary);
+
+
+
+ }
+
+ h2,
+ h4 {
+     font-weight: bold;
+
+ }
+
+ .head {
+    //  margin-top: 5vh;
+
+     p {
+         font-size: 1.2em;
+         color: var(--ion-color-primary);
+
+     }
+ }
+
+ img {
+    //  margin-top: 5vh;
+ 
+ }
+
+ p {
+     font-size: 1.5em;
+ }
+
+ .signup {
+     --background: transparent;
+     color: var(--login-button-text);
+     height: 7vh;
+
+ }
+
+ .login {
+     height: 7vh;
+     --background: var(--singup-button);
+     color: white;
+ }

@@ -1,0 +1,144 @@
+<ion-content>
+
+  <ion-grid class="top-grid">
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/notification/Left_Arrow.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          Notifications
+        </span> </ion-col>
+    </ion-row>
+    <ion-row class="subtitle-row ion-text-center">
+
+      <ion-col class="ion-text-start subtitle">
+        <ion-row>
+          <span>
+            {{profile?.name}}
+          </span>
+        </ion-row>
+        <ion-row>
+          <p>
+            {{address}}
+          </p>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<div *ngIf="notifications.length==0" class="no_notifications">
+<h2>There is no notification now</h2>
+</div>
+<div *ngIf="notifications.length!>0">
+  <ion-row *ngFor="let notification of notifications">
+    <ion-col size="2" class="ion-text-end order-col">
+      <div class="order-container">
+        <img src="assets/imgs/notification/order.png" alt="">
+      </div>
+    </ion-col>
+    <ion-col size="10">
+      <ion-item>
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-row>
+              <ion-col size="9">
+                <p>
+                  <!-- BnR’s Store marked your order <span> #1982984 </span> as shipped. -->
+                  {{notification?.text}}
+                </p>
+
+              </ion-col>
+              <ion-col size="3" class="order-col-second ">
+                <ion-row>
+                  <span>
+                   {{notification.created_at}}
+                  </span>
+                </ion-row>
+                <ion-row>
+                  <div>
+                  </div>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</div>
+  
+  <!-- <ion-row>
+    <ion-col size="2" class="ion-text-end order-col">
+      <div class="order-container">
+        <img src="assets/imgs/notification/order.png" alt="">
+      </div>
+    </ion-col>
+    <ion-col size="10">
+      <ion-item>
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-row>
+              <ion-col size="9">
+                <p>
+                  BnR’s Store marked your order <span> #1982984 </span> as shipped.
+                </p>
+
+              </ion-col>
+              <ion-col size="3" class="order-col-second ">
+                <ion-row>
+                  <span>
+                    9:20 AM
+                  </span>
+                </ion-row>
+                <ion-row>
+
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-col>
+  </ion-row> -->
+
+
+  <!-- <ion-row>
+    <ion-col size="2" class="ion-text-end order-col">
+      <div class="shop-container">
+        <img src="assets/imgs/shop/shop.png" alt="">
+      </div>
+    </ion-col>
+    <ion-col size="10">
+      <ion-item>
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-row>
+              <ion-col size="9">
+                <p>
+                  Flash Sale starting <span> tomorrow </span>. Don’t forget to check it out for great deals! as shipped.
+                </p>
+
+              </ion-col>
+              <ion-col size="3" class="order-col-second ">
+                <ion-row>
+                  <span>
+                    9:20 AM
+                  </span>
+                </ion-row>
+                <ion-row>
+ 
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-col>
+  </ion-row> -->
+
+</ion-content>

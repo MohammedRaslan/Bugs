@@ -1,0 +1,283 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          My Cart
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="top_Card" *ngFor="let item of storageData;let i = index">
+    <ion-row>
+      <ion-col size="4">
+        <img *ngIf="!isFromApi" [src]="item.img1" alt="">
+        <img *ngIf="isFromApi" [src]="item.product.img1" alt="">
+      </ion-col>
+      <ion-col size="6" class="ion-text-start">
+        <ion-row class="title-row">
+          <ion-col class="ion-text-start" size="10">
+            <span class="card-title" *ngIf="!isFromApi">{{item?.name}}</span>
+            <span class="card-title" *ngIf="isFromApi">{{item?.product?.name}}</span>
+
+          </ion-col>
+          <ion-col size="2" class="ion-text-end">
+            <ion-icon name="trash-outline" class="delete_icon" (click)="delete(item,i)"></ion-icon>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-start salary">
+            <span *ngIf="!isFromApi">EGP {{item?.price}}</span>
+            <span *ngIf="isFromApi">EGP {{item?.product?.price}}</span>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="plus-minus-col">
+        <ion-grid>
+          <ion-row class="ion-text-center">
+            <ion-col size="4" class="ion-text-center">
+              <ion-icon name="add-outline" (click)="add(item)"></ion-icon>
+
+            </ion-col>
+
+
+            <ion-col size="4" class="ion-text-center">
+              <span>{{item?.quantity}}</span>
+
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <ion-icon name="remove-outline" (click)="minus(item)"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <!-- <ion-card class="top_Card" (click)="goToItemDetails()">
+    <ion-row>
+      <ion-col size="4">
+        <img src="assets/imgs/shop/shop_test.png" alt="">
+      </ion-col>
+      <ion-col size="6" class="ion-text-start">
+        <ion-row class="title-row">
+          <ion-col class="ion-text-start">
+            <span class="card-title">GREEN BALANCE</span>
+
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-start salary">
+            <span>EGP 30.00</span>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="plus-minus-col">
+        <ion-grid>
+          <ion-row class="ion-text-center">
+            <ion-col size="4" class="ion-text-center">
+              <ion-icon name="add-outline" (click)="add()"></ion-icon>
+
+            </ion-col>
+
+
+            <ion-col size="4" class="ion-text-center">
+              <span>{{item_number}}</span>
+
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <ion-icon name="remove-outline" (click)="minus()"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10">
+        <ion-row>
+          <ion-col>
+            <h5>Delivery Address</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>{{address}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+      <ion-col size="2">
+        <div class="edit" (click)="openAdressForEdit()">
+          <img src="assets/imgs/edit.png" alt="">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="profile?.address1 == null  ||addressTwoChecker" class="grid_item">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Governorate</ion-label>
+          <ion-select (ionChange)="changeGovernorateSelect($event)">
+            <ion-select-option *ngFor="let item of governorateList" [value]="item"> {{item}}</ion-select-option>
+
+            <!-- <ion-select-option value="cairo">Cairo</ion-select-option>
+            <ion-select-option value="giza">Giza</ion-select-option>
+            <ion-select-option value="newCairo">New Cairo</ion-select-option> -->
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="profile?.address1 == null  ||addressTwoChecker" class="grid_item">
+    <ion-row>
+      <ion-col>
+        <ion-item *ngIf="governorate=='cairo'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+            <ion-select-option *ngFor="let item of cairoStates" [value]="item"> {{item}}</ion-select-option>
+
+
+
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="governorate=='giza'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+
+            <ion-select-option *ngFor="let item of gizaStates" [value]="item"> {{item}}</ion-select-option>
+
+
+
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="governorate=='newCairo'">
+          <ion-label>State</ion-label>
+          <ion-select (ionChange)="changeStateSelect($event)">
+
+            <ion-select-option *ngFor="let item of newCairoStates" [value]="item"> {{item}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="addressChecker" class="grid_item">
+    <ion-row>
+      <ion-item>
+        <ion-row>
+          <!-- <span>Your detailed address :</span> -->
+          <p>Your detailed address : </p>
+
+          <ion-input [(ngModel)]="addressDetails"></ion-input>
+        </ion-row>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+  <div class="checkout-container" *ngIf="addressDetails!=null &&profile?.address1 ==null">
+    <ion-button class="checkout" expand="full" shape="round" (click)="saveAdress()">
+      save Address</ion-button>
+
+  </div>
+  <div class="checkout-container" *ngIf="addressTwoChecker">
+    <ion-button class="checkout" expand="full" shape="round" (click)="saveAdress2()">
+      save Address</ion-button>
+
+  </div>
+
+
+
+  <ion-grid>
+    <ion-row class="titles-row">
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="6">
+            <span>Subtotal</span>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="6">
+            <span>Delivery</span>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-col size="2" class="plus-col">
+      <ion-icon name="add-outline" class="plus"></ion-icon>
+    </ion-col>
+    <ion-row class="cost">
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="6">
+            <span>EGP {{totalProductPrice}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="6">
+            <span>EGP 0</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-label>Promo Code</ion-label>
+    <ion-input [(ngModel)]="promoCode"></ion-input>
+
+  </ion-item>
+  <ion-row>
+    <ion-col size="5">
+
+    </ion-col>
+    <ion-col size="7">
+      <ion-row>
+        <ion-col size="6">
+          <span class="final-price-title"> Total </span>
+        </ion-col>
+        <ion-col size="6">
+          <span class="final-price">EGP {{total}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <div class="checkout-container">
+    <ion-button class="checkout" expand="full" shape="round" (click)="goToCheckout()"
+      *ngIf="storageData !=null&&storageData.length>0">
+      Checkout</ion-button>
+
+  </div>
+
+</ion-content>

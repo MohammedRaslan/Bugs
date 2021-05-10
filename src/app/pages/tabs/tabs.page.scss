@@ -1,0 +1,44 @@
+ion-tab-bar {
+    --background: linear-gradient(235deg, #08d3ff 0%, #178dd5 0%, #ff6979 100%);
+    height: 8vh;
+}
+
+ion-tab-button {
+    display: contents;
+    ion-label {
+        color: white;
+        font-size: 1.2em;
+        margin-top: 0.5vh;
+    }
+}
+ion-tab-button.tab-selected {
+    ion-label {
+        font-weight: bolder;
+    }
+    img {
+        width: 60%;
+    }
+}
+
+img {
+    width: 50%;
+}
+
+ion-badge {
+    width: 15px;
+    left: 2vw;
+    top: 1.5vh;
+    --background: #ff6979;
+    height: 14px;
+    font-size: 0.8em;
+}
+
+.more {
+    img {
+        margin-top: 1vh;
+    }
+}
+
+.edit_imag {
+    margin-right: 2vw;
+}

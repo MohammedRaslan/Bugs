@@ -1,0 +1,132 @@
+<ion-content>
+  <ion-grid class="top-grid">
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/notification/Left_Arrow.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          Setting
+        </span> </ion-col>
+    </ion-row>
+    <ion-row class="subtitle-row ion-text-center" *ngIf="profile.address1 !=null && profile.name !=null">
+
+      <ion-col class="ion-text-start subtitle">
+        <ion-row>
+          <span>
+            {{profile?.name}}
+          </span>
+        </ion-row>
+        <ion-row>
+          <p>
+            {{profile?.address1}}
+          </p>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="items-container">
+    <ion-item (click)="onShippingAddressClick()">
+      <ion-row>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col size="9">
+          <img src="assets/imgs/settings/shipping.png" alt="">
+          <span>
+            Shipping Address
+          </span>
+        </ion-col>
+        <ion-col size="2">
+          <img class="arrow" src="assets/imgs/settings/arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+
+
+    <!-- <ion-item>
+      <ion-row>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col size="9">
+          <img src="assets/imgs/settings/shipping.png" alt="">
+          <span>
+            Shipping Address
+          </span>
+        </ion-col>
+        <ion-col size="2">
+          <img class="arrow" src="assets/imgs/settings/arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-item> -->
+
+
+
+
+
+
+    <ion-item (click)="onPaymentClick()">
+      <ion-row>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col size="9">
+          <img src="assets/imgs/settings/payment.png" alt="">
+          <span>
+            Payment Method
+          </span>
+        </ion-col>
+        <ion-col size="2">
+          <img class="arrow" src="assets/imgs/settings/arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+
+    <!-- <ion-item>
+      <ion-row>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col size="9">
+          <img src="assets/imgs/settings/bell.png" alt="">
+          <span>
+            Notification Settings
+          </span>
+        </ion-col>
+        <ion-col size="2">
+          <img class="arrow" src="assets/imgs/settings/arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-item> -->
+
+
+
+    <ion-item (click)="openPrivacyPolicy()">
+      <ion-row>
+        <ion-col size="1">
+
+        </ion-col>
+        <ion-col size="9">
+          <img src="assets/imgs/settings/shield.png" alt="">
+          <span>
+            Privacy Policy
+          </span>
+        </ion-col>
+        <ion-col size="2">
+          <img class="arrow" src="assets/imgs/settings/arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </div>
+  <div class="save-container">
+    <ion-button class="save" expand="full" shape="round">SAVE</ion-button>
+
+  </div>
+</ion-content>

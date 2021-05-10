@@ -1,0 +1,171 @@
+ion-content {
+    --background: #F5F6F8;
+
+}
+
+.back-container {
+
+    img {
+        width: 35px;
+        margin-left: 1vw;
+    }
+
+}
+
+.title-row {
+    margin-top: 2vh;
+}
+
+.title {
+    span {
+        font-size: 1.6em;
+        color: #178DD5;
+        font-weight: bold;
+        margin-left: 5vw;
+    }
+}
+
+ion-segment {
+    margin-top: 2vh;
+}
+
+ion-segment-button {
+    --indicator-color: transparent !important;
+    --indicator-color-checked: transparent !important;
+    color: #178DD5;
+    text-transform: capitalize;
+
+}
+
+.segment-button-checked {
+    font-weight: bold;
+
+}
+
+ion-card {
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: calc(50vw - 40px) !important;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px -2px, rgba(0, 0, 0, 0.14) 0px 0px 2px 0px, rgba(0, 0, 0, 0.12) 0px 0px 5px 0px;
+
+    .card_bottom {
+        height: 1vh;
+        background: #FF6979;
+    }
+}
+
+.container {
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.plus {
+    background: #FF6979;
+    width: 6vw;
+    height: 3vh;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 60%;
+
+    }
+}
+
+.shop {
+    background: #ADD172;
+    width: 6vw;
+    height: 3vh;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 60%;
+
+    }
+}
+
+.sale {
+    background: #eb8f94;
+    width: 55px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 60%;
+
+    }
+
+    h6 {
+        color: white;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+}
+
+.new {
+    background: #5BC1E3;
+    width: 55px;
+    height: 25px;
+    // border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 60%;
+
+    }
+
+    h6 {
+        color: white;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+}
+
+.card-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333333;
+}
+
+.salary {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+        color: #FF6979;
+        font-size: 1em;
+     }
+}
+
+.salary_discount {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+        text-decoration: line-through;
+        color: #FF6979;
+        font-size: 1em;
+     }
+}
+
+.discription {
+    margin-left: 2vw;
+    padding-right: 15vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}

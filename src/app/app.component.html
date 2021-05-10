@@ -1,0 +1,20 @@
+<ion-app>
+  <ion-menu side="end" contentId="main" class="menu">
+
+    <ion-content class="my-custom-menu">
+      <ion-list>
+        <h2>
+          <ion-icon name="person-circle-outline"></ion-icon> {{userName}}
+        </h2>
+        <h1 (click)="goToSideItem('notification')">Notifications</h1>
+        <h1 (click)="goToSideItem('profile')">Profile</h1>
+        <h1 (click)="goToSideItem('settings')">Setting</h1>
+        <h1 (click)="openAboutPage()">About Us</h1>
+        <h1 (click)="openPrivacyPolicy()">Privacy Policy</h1>
+        <h1 (click)="logout()">Logout</h1>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

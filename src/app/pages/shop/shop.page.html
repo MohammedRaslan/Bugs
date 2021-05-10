@@ -1,0 +1,193 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          SHOP
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Scrollable Segment -->
+  <ion-segment scrollable (ionChange)="segmentChanged($event)" [value]="category.id">
+    <div *ngFor="let cat of categories">
+      <ion-segment-button *ngIf="cat?.status==1" [value]="cat?.id">
+        <ion-label>{{cat?.name}}</ion-label>
+      </ion-segment-button>
+    </div>
+
+    <!-- <ion-segment-button value="popular">
+      <ion-label>Popular</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="new">
+      <ion-label>New</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="category1">
+      <ion-label>Category1</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="category2">
+      <ion-label>Category2</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="category3">
+      <ion-label>Categor3</ion-label> -->
+    <!-- </ion-segment-button> -->
+
+  </ion-segment>
+  <div [ngSwitch]="category?.name">
+    <div *ngSwitchCase="'all'" class="container">
+      <div *ngFor="let item of data">
+        <ion-card class="top_Card" (click)="goToItemDetails(item)" *ngIf="item.status==1">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <img [defaultImage]="lazyImage" [lazyLoad]=" item?.img1" alt="">
+              </ion-col>
+              <ion-col size="8" class="ion-text-start">
+                <ion-row>
+                  <ion-col size="9" class="ion-text-start">
+                    <span class="card-title">{{item?.name}}</span>
+
+                  </ion-col>
+                  <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==1">
+                    <div class="sale">
+                      <h6>Sale</h6>
+
+                    </div>
+
+                  </ion-col>
+                  <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==0 && item.new==1">
+                    <div class="new">
+                      <!-- <img src="assets/imgs/shop/shop.png" alt="">
+
+                    </div> -->
+                      <h6>New</h6>
+                    </div>
+                  </ion-col>
+                  <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==0 && item.new==0">
+                    <!-- <div class="shop">
+                      <img src="assets/imgs/shop/shop.png" alt="">
+
+                    </div> -->
+
+                  </ion-col>
+                </ion-row>
+                <div *ngIf='item.desc!=null &&item.desc!="null"'>
+                  <p class="discription">{{item?.desc}}</p>
+                </div>
+                <div *ngIf='item.desc==null ||item.desc=="null"'>
+                  <br>
+                </div>
+                <ion-row>
+                  <ion-col size="4" *ngIf="item.sale>0" class="ion-text-start salary_discount">
+                    <span>EGP {{item?.price}}</span>
+
+                  </ion-col>
+                  <ion-col size="10" *ngIf="item.sale==0" class="ion-text-start salary">
+                    <span>EGP {{item?.price}}</span>
+
+                  </ion-col>
+                  <ion-col size="6" *ngIf="item.sale>0" class="ion-text-start salary">
+                    <span>EGP {{(item?.price-((item?.price*item?.sale_percent)/100)) }}</span>
+
+                  </ion-col>
+                  <ion-col size="2" class="ion-text-end">
+                    <div class="plus">
+                      <img src="assets/imgs/shop/plus.png" alt="">
+
+                    </div>
+
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <div class="card_bottom"></div>
+        </ion-card>
+      </div>
+
+
+    </div>
+
+    <div *ngIf="category?.name !='all'">
+      <div *ngSwitchCase="category?.name" class="container">
+        <div *ngFor="let item of data">
+          <ion-card class="top_Card" (click)="goToItemDetails(item)" *ngIf="item.status==1">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <img [src]="item?.img1" alt="">
+                </ion-col>
+                <ion-col size="8" class="ion-text-start">
+                  <ion-row>
+                    <ion-col size="9" class="ion-text-start">
+                      <span class="card-title">{{item?.name}}</span>
+
+                    </ion-col>
+                    <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==1">
+                      <div class="sale">
+                        <h6>Sale</h6>
+
+                      </div>
+
+                    </ion-col>
+                    <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==0 && item.new==1">
+                      <div class="new">
+                        <!-- <img src="assets/imgs/shop/shop.png" alt="">
+  
+                      </div> -->
+                        <h6>New</h6>
+
+                      </div>
+
+                    </ion-col>
+                    <ion-col size="3" class="ion-text-end" *ngIf="item.sale ==0 && item.new==0">
+                      <!-- <div class="shop">
+                        <img src="assets/imgs/shop/shop.png" alt="">
+  
+                      </div> -->
+
+                    </ion-col>
+                  </ion-row>
+                  <div *ngIf='item.desc!=null &&item.desc!="null"'>
+                    <p class="discription">{{item?.desc}}</p>
+                  </div>
+                  <div *ngIf='item.desc==null ||item.desc=="null"'>
+                    <br>
+                  </div>
+                  <ion-row>
+                    <ion-col size="10" class="ion-text-start salary">
+                      <span>EGP {{item?.price}}</span>
+
+                    </ion-col>
+                    <ion-col size="2" class="ion-text-end">
+                      <div class="plus">
+                        <img src="assets/imgs/shop/plus.png" alt="">
+
+                      </div>
+
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <div class="card_bottom"></div>
+          </ion-card>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <ion-infinite-scroll (ionInfinite)="infiniteScrollLoadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="loading" color="white">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

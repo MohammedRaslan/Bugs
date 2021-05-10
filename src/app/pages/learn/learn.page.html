@@ -1,0 +1,43 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          Learn
+        </span> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngFor="let article of data">
+    <ion-card (click)="goToItemDetails(article)" *ngIf="article.status==1">
+      <img [src]="article?.img" alt="">
+      <ion-row>
+        <h5>{{article?.name}}</h5>
+      </ion-row>
+      <!-- <p>{{article?.text}}</p> -->
+      <ion-row class="discription">
+        <ion-col class="ion-text-end">
+          
+          <div *ngIf="article.is_liked" class="like-container">
+            <img  class="likes"  src="assets/imgs/learn/likes.png" alt=""><span>{{article?.likes_count}}</span>
+          </div>
+          <div *ngIf="article.is_liked==false"  class="like-container">
+            <img  class="likes"  src="assets/imgs/learn/like-heart-outline.png" alt=""><span>{{article?.likes_count}}</span>
+            
+          </div>
+          <img class="likes" src="assets/imgs/learn/comments.png" alt=""> <span>{{article?.comments_count}}</span>
+         
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="infiniteScrollLoadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="loading" color="white">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

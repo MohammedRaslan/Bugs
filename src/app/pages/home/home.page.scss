@@ -1,0 +1,93 @@
+.top_curve {
+  height: 10vh;
+  background: #178dd5;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 50px;
+}
+
+.card-container {
+  padding-right: 5vw;
+  padding-left: 5vw;
+  margin-top: -4vh;
+
+  .top_Card {
+    border-radius: 25px;
+  }
+  .all-products-container {
+    padding-right: 5vw;
+    padding-left: 5vw;
+ 
+  }
+
+  .card-background {
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  h5 {
+    margin-top: 3vh;
+    text-align: start;
+    color: #178dd5;
+    margin-left: 3vw;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  p {
+    margin-top: 2vh;
+    text-align: start;
+    margin-left: 3vw;
+    color: #4a4a4a;
+  }
+}
+
+ion-card {
+  border-radius: 5px;
+}
+
+.first_slider_Card {
+  color: white;
+  position: relative;
+  text-align: center;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 100% !important;
+  height: calc(50vw - 40px) !important;
+  display: flex;
+  align-items: flex-end;
+
+  span {
+    margin: 5px;
+  }
+}
+
+.second_slider_Card {
+  margin-inline-end: 0 !important;
+  height: 32vh;
+
+  div {
+    margin: 1vw;
+  }
+
+  span {
+    color: #178dd5;
+    font-size: 1.3em;
+    overflow: hidden;
+  }
+}
+
+.powered {
+  padding-right: 5vw;
+  padding-left: 5vw;
+  margin-top: 3vh;
+}
+
+ion-slides {
+  padding-bottom: 3.5vh;
+}
+.text_cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

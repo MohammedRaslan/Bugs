@@ -1,0 +1,114 @@
+<ion-content scrollX="true">
+  <div class="top_curve"></div>
+  <div class="card-container" *ngIf="offer !=null">
+    <ion-card class="top_Card">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <img src="assets/imgs/login/logo.png" alt="">
+            </ion-col>
+            <ion-col size="8" class="ion-text-center">
+              <h5>Today Offer</h5>
+              <p>{{offer?.offer_percentage}} % Discount on {{offer?.offer_on}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="all-products-container">
+    <ion-row class="ion-text-center">
+      <ion-col size="12" class="ion-text-center">
+        <h5 style="color: #178dd5;font-size: 1.3em;font-weight: bold;">All Products</h5>
+      </ion-col>
+
+    </ion-row>
+  </div>
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-slides [options]="sliderConfig" pager>
+        <ion-slide *ngFor="let item of products" class="ion-text-start " button tappable>
+          <ion-card class="first_slider_Card card-background" [style.background-image]="'url('+ item?.img1 +')'"
+            (click)="goToProductDetails(item)">
+
+            <span>
+              {{item?.name}}
+            </span>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+      <!-- <ion-col size="4" class="ion-text-start">
+      
+      </ion-col> -->
+
+      <!-- <ion-col size="4" class="ion-text-start">
+        <ion-card class="first_slider_Card">
+          <span>Today Offer</span>
+
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="ion-text-start">
+        <ion-card class="first_slider_Card">
+          <span>Today Offer</span>
+
+        </ion-card>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  <div class="all-products-container">
+    <ion-row class="ion-text-center">
+      <ion-col size="12" class="ion-text-center">
+        <h5 style="color: #178dd5;font-size: 1.3em;font-weight: bold;">Blogs</h5>
+      </ion-col>
+
+    </ion-row>
+  </div>
+  <ion-grid>
+    <ion-row class="ion-text-center ">
+      <ion-slides [options]="secondSliderConfig" pager>
+        <ion-slide class="ion-text-start" *ngFor="let item of blogs" button tappable>
+          <ion-card class="second_slider_Card" (click)="openBlogDetails(item)">
+            <img [src]="item?.img" alt="">
+            <div class="text_cut">
+              <span>
+                {{item?.name}}
+              </span>
+
+            </div>
+
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-col size="6" class="ion-text-start" *ngFor="let item of blogs">
+        <ion-card class="second_slider_Card">
+          <img src="assets/imgs/home/slider.png" alt="">
+          <div>
+            <span>
+              {{item?.name}}
+            </span>
+
+          </div>
+
+        </ion-card>
+      </ion-col> -->
+
+
+      <!-- <ion-col size="6" class="ion-text-start">
+        <ion-card class="second_slider_Card">
+          <img src="assets/imgs/home/slider.png" alt="">
+          <div>
+            <span>10 Steps to starting a vegetable garden</span>
+
+          </div>
+
+        </ion-card>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  <div class="powered">
+    <img src="assets/imgs/home/powerdby.png" alt="">
+  </div>
+</ion-content>

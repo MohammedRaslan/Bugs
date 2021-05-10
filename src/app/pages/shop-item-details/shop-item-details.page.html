@@ -1,0 +1,102 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col size="4" class="ion-text-start back-container">
+        <img src="assets/imgs/signup/back.png" alt="" (click)="back()">
+
+      </ion-col>
+      <ion-col class="ion-text-start title">
+        <span>
+          SHOP
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides pager="true">
+    <ion-slide>
+      <ion-card>
+        <img [src]="item?.img1" alt="">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img [src]="item?.img2" alt="">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img [src]="item?.img3" alt="">
+      </ion-card>
+    </ion-slide>
+    <!-- <ion-slide>
+      <ion-card>
+        <img src="assets/imgs/shop/shop_test.png" alt="">
+      </ion-card>
+    </ion-slide> -->
+  </ion-slides>
+  <ion-row>
+    <ion-col size="6" class="ion-text-start">
+      <span class="item_name">{{item?.name}}</span>
+    </ion-col>
+    <ion-col *ngIf="item.sale==0" size="6" class="ion-text-end">
+      <span class="item_price">
+        EGP {{item?.price}}
+      </span>
+    </ion-col>
+
+    <ion-col *ngIf="item.sale>0" size="3" class="ion-text-start">
+      <span class="item_price_sale">
+        EGP {{item?.price}}
+      </span>
+    </ion-col>
+    <ion-col *ngIf="item.sale>0" size="3" class="ion-text-start">
+      <span class="item_price_in_sale">
+        EGP {{(item?.price-((item?.price*item?.sale_percent)/100)) }}
+      </span>
+    </ion-col>
+
+
+  </ion-row>
+  <ion-row class="category_row">
+    <ion-col class="ion-text-start">
+      <span class="category">SKu: </span>
+      <span class="category_name"> {{item?.code}}</span>
+      <span class="category2">Category: </span>
+      <span class="category_name"> {{item?.category.name}}</span>
+    </ion-col>
+
+  </ion-row>
+  <h5 class="description" *ngIf='item.desc!=null &&item.desc!="null"'>Description</h5>
+  <p *ngIf='item.desc!=null &&item.desc!="null"'>{{item?.desc}}</p>
+  <h5 class="use" *ngIf='item.add_info!=null &&item.add_info!="null"'>How to use</h5>
+  <p *ngIf='item.add_info!=null &&item.add_info!="null"'>{{item?.add_info}}</p>
+  <ion-row>
+    <ion-col size="4">
+      <ion-button class="item_number_btn" expand="full" fill="outline" shape="round">
+        <ion-row>
+          <ion-col size="4" class="ion-text-start">
+            <ion-icon name="remove-outline" (click)="minus()"></ion-icon>
+
+          </ion-col>
+          <ion-col size="4" class="ion-text-end">
+            <span>{{item_number}}</span>
+
+          </ion-col>
+          <ion-col size="4" class="ion-text-end">
+            <ion-icon name="add-outline" (click)="add()"></ion-icon>
+
+          </ion-col>
+        </ion-row>
+
+
+
+
+      </ion-button>
+
+    </ion-col>
+    <ion-col size="8">
+      <ion-button class="buy" expand="full" shape="round" (click)="addTodCart(item)">Add To Cart</ion-button>
+
+    </ion-col>
+  </ion-row>
+</ion-content>
